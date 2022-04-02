@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+</head>
+
+
+<body bgcolor="magenta">
+ <div class="login">
+
+	<h1 style="font-size:40px;
+       text-align:center;	
+        background-color:orange;
+         border:5px solid black;
+         margin-left:500px;
+        margin-right:500px;
+       border-radius:10px;
+      color:black;
+     margin-bottom:10px;
+	 padding:10px;"
+	class="header1"><b>Fuel Price_Predictions</b></h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input style="background-color:white;
+	margin-left:600px;
+	border-radius:10px;
+	padding:20px;" type="text" name="X_test" placeholder="X_test" required="required" />
+	
+       
+
+        <button style="background-color:white;padding:20px;
+	border-radius:10px;"  type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+                                                  {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
